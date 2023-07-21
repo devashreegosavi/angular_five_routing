@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 
 @Component({
   selector: 'app-servers',
@@ -8,5 +9,11 @@ import { Component } from '@angular/core';
 export class ServersComponent {
   //servers= [{'name':'abc'}];
 
+  constructor(private router : Router, private route:ActivatedRoute){
+
+  }
+  onReload(){
+    //this.router.navigate(['servers'], {relativeTo : this.route});
+  }
   
 }
