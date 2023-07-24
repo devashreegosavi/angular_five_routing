@@ -11,6 +11,7 @@ import { UserComponent } from './users/user/user.component';
 import { RouterModule, Routes } from '@angular/router';
 import { ServersService } from './servers/servers.service';
 import { ServerComponent } from './servers/server/server.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes : Routes = [
   { path:'', component: HomeComponent },
@@ -38,6 +39,7 @@ const appRoutes : Routes = [
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     RouterModule.forRoot(appRoutes)
   ],
