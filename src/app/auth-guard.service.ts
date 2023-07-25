@@ -1,11 +1,13 @@
 import { Injectable } from "@angular/core";
-import { ActivatedRouteSnapshot, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
+import { ActivatedRouteSnapshot, CanActivateFn, Router, RouterStateSnapshot, UrlTree } from "@angular/router";
 import { Observable } from "rxjs";
 import { AuthService } from "./auth.service";
 
 @Injectable()
 
-export class AuthGuard {
+export class AuthGuard{
+
+    
     /*canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean | UrlTree | Observable<boolean | UrlTree> | Promise<boolean | UrlTree> {
         this.AuthService.isAuthenticated().then(
             (authenticated : boolean) => {
@@ -35,7 +37,9 @@ export class AuthGuard {
             }
         );
     }
-*/
+
+    
+    
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean{
          this.AuthService.isAuthenticated().then(
             (authenticated : boolean) => {
@@ -49,7 +53,7 @@ export class AuthGuard {
             }
         );
   }
-
+*/
     constructor(private AuthService : AuthService, private router : Router){
 
     }
