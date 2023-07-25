@@ -9,6 +9,7 @@ import { ServersComponent } from './servers/servers.component';
 import { UserComponent } from './users/user/user.component';
 import { AuthService } from './auth.service';
 import { AuthGuard } from './auth-guard.service';
+import { ErrorPageComponent } from './error-page/error-page.component';
 //const routes: Routes = [];
 
 const appRoutes : Routes = [
@@ -22,7 +23,9 @@ const appRoutes : Routes = [
       { path:':id/edit', component: EditServerComponent }
   ]
   },
-  { path : '**', component:PageNotFoundComponent}
+  { path : 'not-found', component : ErrorPageComponent, data : {message : 'Page not found!'}},
+  { path : '**', redirectTo : '/not-found'}
+ // { path : '**', component:PageNotFoundComponent}
   
 ];
 
